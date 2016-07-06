@@ -2,7 +2,7 @@ import React  from 'react'
 import Article from './Article'
 
 function ArticleList(props) {
-    const { articles } = props
+    const { articles, comments } = props
 
     const listItems = articles.map((article) => <li key = {article.id}><Article article = {article}/></li>)
     return (
