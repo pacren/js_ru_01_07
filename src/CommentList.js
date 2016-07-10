@@ -8,7 +8,7 @@ class CommentList extends Component {
         console.log('---', this.props)
     }
     componentDidMount(){
-        console.log('---', 'mounted')
+        console.log('---', 'mounted', this.refs.toggler)
     }
     componentWillReceiveProps(nextProps){
         console.log('---', this.props.isOpen, nextProps.isOpen)
@@ -28,7 +28,7 @@ class CommentList extends Component {
 
         return (
             <div>
-                <a href="#" onClick = { toggleOpen }>{ toggleText }</a>
+                <a href="#" onClick = { toggleOpen } ref="toggler">{ toggleText }</a>
                 <div> { body } </div>
             </div>
         )
