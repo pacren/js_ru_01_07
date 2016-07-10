@@ -1,15 +1,9 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import CommentList from './CommentList'
+import toggleOpen from './mixins/toggleOpen'
 
-class Article extends Component {
-    state = {
-        isOpen: false
-    }
-
-    static propTypes = {
-        article: PropTypes.object.isRequired
-    }
-
+const ArticleOld = React.createClass ({
+    mixins: [toggleOpen],
     render() {
         const { article: { title, text, comments } } = this.props
         const { isOpen } = this.state
@@ -22,13 +16,6 @@ class Article extends Component {
             </div>
         )
     }
+})
 
-    toggleOpen = (ev) => {
-        if (ev){ ev.preventDefault() }
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    }
-}
-
-export default Article
+export default ArticleOld
