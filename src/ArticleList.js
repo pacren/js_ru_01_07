@@ -9,7 +9,7 @@ class ArticleList extends Component{
         const listItems = articles.map((article) => <li key = {article.id}>
             <Article article = {article}
                      isOpen = {article.id == openArticleId}
-                     openArticle = { toggleOpenArticle(article.id) }
+                     toggleOpenArticle = { toggleOpenArticle(article.id) }
             />
         </li>)
         return (
