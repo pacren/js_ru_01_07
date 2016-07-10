@@ -1,34 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import CommentList from './CommentList'
+import toggleOpen from './decorators/toggleOpen'
 
 class Article extends Component {
-    state = {
-        isOpen: false
-    }
-
     static propTypes = {
         article: PropTypes.object.isRequired
     }
 
     render() {
-        const { article: { title, text, comments } } = this.props
-        const { isOpen } = this.state
+        const { isOpen, toggleOpen, article: { title, text, comments } } = this.props
         const body = isOpen ? <section> { text } <CommentList comments = { comments }/> </section> : null;
 
         return (
             <div>
-                <h1 onClick = { this.toggleOpen }>{ title }</h1>
+                <h1 onClick = { toggleOpen }>{ title }</h1>
                 { body }
             </div>
         )
     }
-
-    toggleOpen = (ev) => {
-        if (ev){ ev.preventDefault() }
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    }
 }
 
-export default Article
+export default toggleOpen(Article)

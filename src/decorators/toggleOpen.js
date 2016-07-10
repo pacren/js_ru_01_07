@@ -5,6 +5,10 @@ export default (Component) => class DecoratedComponent extends React.Component {
         isOpen: false
     }
 
+    componentWillUpdate(nextProps, nextState) {
+        console.log('---', nextState.isOpen)
+    }
+
     toggleOpen = (ev) => {
         if (ev){ ev.preventDefault() }
         this.setState({
