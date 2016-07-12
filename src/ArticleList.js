@@ -1,15 +1,15 @@
 import React, { Component }  from 'react'
 import Article from './Article'
-import toggleOpenArticle from './decorators/toggleOpenArticle'
+import toggleOpenItem from './decorators/toggleOpenItem'
 
 class ArticleList extends Component{
     render(){
-        const { toggleOpenArticle, openArticleId, articles } = this.props
+        const { toggleOpenItem, openItemId, articles } = this.props
 
         const listItems = articles.map((article) => <li key = {article.id}>
             <Article article = {article}
-                     isOpen = {article.id == openArticleId}
-                     toggleOpenArticle = { toggleOpenArticle(article.id) }
+                     isOpen = {article.id == openItemId}
+                     toggleOpenArticle = { toggleOpenItem(article.id) }
             />
         </li>)
         return (
@@ -23,4 +23,4 @@ class ArticleList extends Component{
     }
 }
 
-export default toggleOpenArticle(ArticleList)
+export default toggleOpenItem(ArticleList)
