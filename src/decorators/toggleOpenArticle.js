@@ -4,6 +4,7 @@ export default (Component) => class DecoratedComponent extends React.Component {
     state = {
         openArticleId: null
     }
+  //привязка к статье в названиях плохо - вы же создаете декоратор для переиспользования логики в других местах, почему toggleOpenArticle, openArticleId
 
     toggleOpenArticle = id => ev => {
         if (ev){ ev.preventDefault() }
