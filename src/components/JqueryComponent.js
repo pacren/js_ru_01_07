@@ -5,13 +5,13 @@ class JqueryComponent extends Component {
 
     };
 
-    componentDidMount(){
-        console.log('---', this.refs.component)
+    componentDidMount() {
+        console.log('---',this.refs.component)
     }
 
-    render(){
-        return(
-            <div ref="component" />
+    render() {
+        return (
+            <div ref="component"/>
         )
     }
 }

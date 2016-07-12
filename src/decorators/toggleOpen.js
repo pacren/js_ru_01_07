@@ -10,13 +10,13 @@ export default (Component) => class DecoratedComponent extends React.Component {
     }
 
     toggleOpen = (ev) => {
-        if (ev){ ev.preventDefault() }
+        ev.preventDefault()
         this.setState({
             isOpen: !this.state.isOpen
         })
     }
 
-    render(){
-        return <Component {...this.props} isOpen = { this.state.isOpen} toggleOpen = {this.toggleOpen} />
+    render() {
+        return <Component {...this.props} isOpen = {this.state.isOpen} toggleOpen = {this.toggleOpen}/>
     }
 }
