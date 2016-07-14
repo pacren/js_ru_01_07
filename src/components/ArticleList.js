@@ -3,6 +3,7 @@ import Article from './Article/index'
 import oneOpen from '../decorators/oneOpen'
 import Select from 'react-select'
 import 'react-select/dist/react-select.css'
+import DatePicker from './DatePicker'
 
 class ArticleList extends Component {
 
@@ -27,6 +28,7 @@ class ArticleList extends Component {
         return (
             <div>
                 <h1>Article list</h1>
+                <DatePicker />
                 <Select
                     options = {options}
                     multi = {true}
