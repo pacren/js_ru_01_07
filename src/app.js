@@ -1,6 +1,5 @@
-import { articles } from './fixtures'
-import ArticleList from './components/ArticleList'
 import React from 'react'
 import { render } from 'react-dom'
+import Root from './containers/Root'
 
-render(<ArticleList articles = {articles} />, document.getElementById('container'))
+render(<Root />, document.getElementById('container'))
