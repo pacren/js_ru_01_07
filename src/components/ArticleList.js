@@ -5,7 +5,6 @@ import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 import DayPicker, { DateUtils } from "react-day-picker"
 import 'react-day-picker/lib/style.css'
->>>>>>> 83035fb11ef721caf1be6e08d84f607511032d96
 
 class ArticleList extends Component {
 
